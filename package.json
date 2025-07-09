@@ -1,0 +1,70 @@
+{
+  "name": "treechop",
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.12.4",
+  "description": "🌳 A lightweight TypeScript utility library for working with tree data structures, providing common operations.",
+  "author": "jinghaihan",
+  "license": "MIT",
+  "homepage": "https://github.com/jinghaihan/treechop#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinghaihan/treechop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jinghaihan/treechop/issues"
+  },
+  "keywords": [
+    "tree",
+    "utils",
+    "iterator",
+    "traverse"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown --clean --dts",
+    "typecheck": "tsc",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint",
+    "commit": "czg",
+    "deps": "taze major -I",
+    "release": "bumpp && pnpm publish --no-git-checks",
+    "catalog": "pncat",
+    "prepare": "npx simple-git-hooks",
+    "bootstrap": "pnpm install",
+    "preinstall": "npx only-allow pnpm",
+    "prepublishOnly": "pnpm build"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:lint",
+    "@octohash/tsconfig": "catalog:dev",
+    "@types/node": "catalog:types",
+    "@vitest/coverage-v8": "catalog:test",
+    "bumpp": "catalog:cli",
+    "czg": "catalog:cli",
+    "eslint": "catalog:lint",
+    "lint-staged": "catalog:lint",
+    "pncat": "catalog:cli",
+    "simple-git-hooks": "catalog:lint",
+    "taze": "catalog:cli",
+    "tsdown": "catalog:build",
+    "typescript": "catalog:dev",
+    "vitest": "catalog:test"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
