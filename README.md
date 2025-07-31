@@ -7,8 +7,6 @@
 
 This library provides a set of utility functions for manipulating tree-structured data in JavaScript/TypeScript. Below are the available methods, their signatures, and usage examples.
 
-![Image](/assets/coverage.png)
-
 **Options and Meta Information:**
 Most methods accept an `options` parameter to customize keys (e.g., `childrenKey`, `idKey`, `parentKey`) and traversal strategy (`pre`, `post`, `breadth`). The callback meta argument provides information like `depth`, `index`, and `parents`.
 
@@ -236,6 +234,12 @@ treeToArray<T extends TreeNode>(
 ```ts
 const arr = treeToArray(tree)
 ```
+
+## Coverage
+
+<p align='center'>
+<img src='/assets/coverage.png' width='600'/>
+</p>
 
 ## License
 
