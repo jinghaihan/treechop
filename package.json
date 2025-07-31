@@ -2,7 +2,7 @@
   "name": "treechop",
   "type": "module",
   "version": "0.1.0",
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@10.15.0",
   "description": "🌳 A lightweight TypeScript utility library for working with tree data structures, providing common operations.",
   "author": "jinghaihan",
   "license": "MIT",
@@ -32,11 +32,10 @@
   ],
   "scripts": {
     "build": "tsdown --clean --dts",
-    "typecheck": "tsc",
+    "typecheck": "tsc --noEmit",
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "lint": "eslint",
-    "commit": "czg",
     "deps": "taze major -I",
     "release": "bumpp && pnpm publish --no-git-checks",
     "catalog": "pncat",
@@ -47,11 +46,9 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:lint",
-    "@octohash/tsconfig": "catalog:dev",
     "@types/node": "catalog:types",
     "@vitest/coverage-v8": "catalog:test",
     "bumpp": "catalog:cli",
-    "czg": "catalog:cli",
     "eslint": "catalog:lint",
     "lint-staged": "catalog:lint",
     "pncat": "catalog:cli",
@@ -65,6 +62,6 @@
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*": "eslint --fix"
+    "*.ts": "eslint --fix"
   }
 }
