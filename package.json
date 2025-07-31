@@ -2,7 +2,7 @@
   "name": "treechop",
   "type": "module",
   "version": "0.1.0",
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@10.13.1",
   "description": "🌳 A lightweight TypeScript utility library for working with tree data structures, providing common operations.",
   "author": "jinghaihan",
   "license": "MIT",
